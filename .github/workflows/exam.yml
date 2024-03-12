@@ -20,3 +20,6 @@ jobs:
       - name: Run Aptos Move Test
         run: python ${{ github.workspace }}/scripts/exam.py
         working-directory: ${{ github.workspace }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
