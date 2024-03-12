@@ -36,7 +36,7 @@ def execute_test():
     results = {}
     for task, points in POINTS.items():
         print(f"Executing {task}...")
-        p = run(["/usr/bin/aptos", "move", "test"], check=True, cwd=f"{task}")
+        p = run(["/usr/bin/aptos", "move", "test"], check=False, cwd=f"{task}")
         if p.returncode != 0:
             print(f"Error executing task {task}")
             results[task] = 0
