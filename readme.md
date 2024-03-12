@@ -1,4 +1,4 @@
-# 🏆 Welcome to Aptos Challenge
+# aptos-homework
 
 ## 📝 Tasks
 
