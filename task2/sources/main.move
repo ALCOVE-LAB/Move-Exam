@@ -10,7 +10,7 @@ module 0x42::Task2{
 
     // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
-    fun gen_Fool(u:u64, b:bool) {
+    fun gen_Fool(u:u64, b:bool): Foo {
         // ...
     }
 
@@ -38,7 +38,7 @@ module 0x42::Task2{
 
     // TODO
     // Define a function gen_Soo that takes two arguments: x: u64, y: u64 and returns a Soo
-    fun gen_Soo(x:u64, y:u64) {
+    fun gen_Soo(x:u64, y:u64): Soo {
         // ...
     }
 
@@ -50,6 +50,8 @@ module 0x42::Task2{
         *x = 44;
         assert!(c.x == 42,0);
         assert!(c2.x == 44,1);
+        let Soo { x: _, y: _ } = c;
+        let Soo { x: _, y: _ } = c2;
     }
 
     // TODO
@@ -67,7 +69,7 @@ module 0x42::Task2{
 
     // TODO
     // Define a function gen_Moo that takes an argument: x: u64 and returns a Moo
-    fun gen_Moo(x:u64) {
+    fun gen_Moo(x:u64): Moo {
         // ...
     }
 
@@ -76,5 +78,6 @@ module 0x42::Task2{
         let s = gen_Moo(42);
         let k = Koo{s: s};
         assert!(k.s.x == 42,0);
+        let Koo { s: Moo { x: _ } } = k;
     }
 }

@@ -3,3 +3,4 @@ tests
 .pdm-python
 *.pyc
 .idea
+.aptos

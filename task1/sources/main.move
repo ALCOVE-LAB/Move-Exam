@@ -4,7 +4,7 @@ module 0x42::Task1 {
 
     // TODO
     // Define a struct called Wallet with a single field called balance of type u64.
-    struct Wallet {
+    struct Wallet has drop {
         // ...
     }
 
