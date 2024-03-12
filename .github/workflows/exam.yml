@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v4
 
       - name: Install Aptos CLI
-        run: bash -c "wget "https://aptos.dev/scripts/install_cli.py"; python3 install_cli.py --bin-dir /usr/bin/"
+        run: bash -c "wget "https://aptos.dev/scripts/install_cli.py"; sudo python3 install_cli.py --bin-dir /usr/bin/"
 
       - name: Install Dependencies
         run: pip install supabase
