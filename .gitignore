@@ -1,0 +1,5 @@
+build
+tests
+.pdm-python
+*.pyc
+.idea

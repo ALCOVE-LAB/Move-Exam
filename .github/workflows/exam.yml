@@ -1,0 +1,22 @@
+name: Aptos Move Exam
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+
+      - name: Install Aptos CLI
+        run: bash -c "curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3"
+
+      - name: Install Dependencies
+        run: pip install supabase
+
+      - name: Run Aptos Move Test
+        run: python ${{ github.workspace }}/scripts/exam.py
+        working-directory: ${{ github.workspace }}
