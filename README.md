@@ -10,7 +10,7 @@
 ## Steps
 
 1. Fork the project to your personal GitHub account.
-2. Check out the code locally, write your 9-digit student number in student_no.txt at the project root.
+2. Check out the code locally, write your 9-digit student number in `student_no.txt` at the project root.
 3. Complete the todo code in each task directory; you can use aptos move test for local validation.
 4. Commit and push the code to your personal repository.
 5. Click to submit a pull request; CI will automatically run tests and save the scores.
