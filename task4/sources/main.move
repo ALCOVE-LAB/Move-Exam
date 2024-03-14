@@ -7,24 +7,29 @@ module 0x42::Task4 {
 
     use std::signer;
 
-    const NAME:vector<u8> = b"myObject"; 
+    const NAME:vector<u8> = b"myObject";
 
     // TODO
     // 1. create a deleteable object
     public fun createDeleteableObject(caller: &signer):ConstructorRef {
-        // ...
+        let caller_addr = signer::address_of(caller);
+        let obj = object::create_object(caller_addr);
+        obj
     }
 
     // TODO
     // 2. create a named object
     public fun createNamedObject(caller: &signer):ConstructorRef {
-        // ...
+        let named_obj = object::create_named_object(caller, NAME);
+        named_obj
     }
 
     // TODO
     // 3. create a sticky object
     public fun createStickyObject(caller: &signer):ConstructorRef {
-        // ...
+        let owner_addr = signer::address_of(caller);
+        let sticky_obj = object::create_sticky_object(owner_addr);
+        sticky_obj
     }
 
     #[test(caller = @0x88)]
