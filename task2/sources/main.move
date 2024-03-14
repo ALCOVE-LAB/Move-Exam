@@ -4,14 +4,15 @@ module 0x42::Task2{
 
     // TODO
     // Define a struct Foo with two fields: u: u64, b: bool with ability to drop
-    struct Foo {
-       // ...
+    struct Foo has drop {
+        u: u64,
+        b: bool
     }
 
     // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
     fun gen_Fool(u:u64, b:bool): Foo {
-        // ...
+        Foo { u, b }
     }
 
     #[test]
