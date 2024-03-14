@@ -2,16 +2,21 @@
 // Create a struct called Wallet with a single field called balance of type u64.
 module 0x42::Task1 {
 
+    use aptos_framework::coin::balance;
+
     // TODO
     // Define a struct called Wallet with a single field called balance of type u64.
     struct Wallet has drop {
-        // ...
+        balance: u64
     }
 
     // TODO
     // Define a function called myWallet that returns a Wallet with a balance of 1000.
     fun myWallet(): Wallet {
-        // ...
+        let wallet: Wallet = Wallet {
+            balance: 1000u64
+        };
+        return wallet
     }
 
     #[test]
