@@ -4,14 +4,19 @@ module 0x42::Task2{
 
     // TODO
     // Define a struct Foo with two fields: u: u64, b: bool with ability to drop
-    struct Foo {
-       // ...
+    struct Foo has drop{
+        u:u64,
+        b:bool
     }
 
     // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
-    fun gen_Fool(u:u64, b:bool): Foo {
-        // ...
+    fun gen_Fool(u:u64, b:bool):Foo {
+        let foo = Foo{
+            u,
+            b
+        };
+        foo
     }
 
     #[test]
@@ -28,18 +33,24 @@ module 0x42::Task2{
         *u = 43;
         assert!(f.u == 43,0);
         assert!(f.b == true,1);
+
     }
 
     // TODO
     // Define a struct Soo with two fields: x: u64, y: u64 with ability to copy
-    struct Soo {
-        // ...
+    struct Soo has copy,drop{
+        x:u64,
+        y:u64
     }
 
     // TODO
     // Define a function gen_Soo that takes two arguments: x: u64, y: u64 and returns a Soo
-    fun gen_Soo(x:u64, y:u64): Soo {
-        // ...
+    fun gen_Soo(x:u64, y:u64) :Soo{
+        let soo = Soo{
+            x,
+            y
+        };
+        soo
     }
 
     #[test]
@@ -50,27 +61,28 @@ module 0x42::Task2{
         *x = 44;
         assert!(c.x == 42,0);
         assert!(c2.x == 44,1);
-        let Soo { x: _, y: _ } = c;
-        let Soo { x: _, y: _ } = c2;
     }
 
     // TODO
     // Define a struct Koo with a field: s: Moo with ability
-    struct Koo {
+    struct Koo has drop{
         s: Moo
     }
 
     // TODO
     // Define a struct Moo with a field: x: u64 with ability
-    struct Moo {
+    struct Moo has drop{
         x: u64
     }
 
 
     // TODO
     // Define a function gen_Moo that takes an argument: x: u64 and returns a Moo
-    fun gen_Moo(x:u64): Moo {
-        // ...
+    fun gen_Moo(x:u64) :Moo{
+        let moo = Moo{
+            x
+        };
+        moo
     }
 
     #[test]
@@ -78,6 +90,5 @@ module 0x42::Task2{
         let s = gen_Moo(42);
         let k = Koo{s: s};
         assert!(k.s.x == 42,0);
-        let Koo { s: Moo { x: _ } } = k;
     }
 }
