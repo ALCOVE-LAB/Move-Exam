@@ -3,8 +3,9 @@
 // 2. Create a named object
 // 3. Create a sticky object
 module 0x42::Task4 {
-    use std::signer;
     use aptos_framework::object::{Self, ConstructorRef};
+
+    use std::signer;
 
     const NAME:vector<u8> = b"myObject"; 
 
