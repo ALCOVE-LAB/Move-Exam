@@ -1,14 +1,12 @@
 // Task2 - drop, copy, store
 module 0x42::Task2{
 
-    // TODO
     // Define a struct Foo with two fields: u: u64, b: bool with ability to drop
     struct Foo has drop{
         u: u64,
         b: bool
     }
 
-    // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
     fun gen_Fool(u:u64, b:bool): Foo {
         Foo {
@@ -59,20 +57,17 @@ module 0x42::Task2{
         let Soo { x: _, y: _ } = c2;
     }
 
-    // TODO
     // Define a struct Koo with a field: s: Moo with ability
     struct Koo {
         s: Moo
     }
 
-    // TODO
     // Define a struct Moo with a field: x: u64 with ability
     struct Moo {
         x: u64
     }
 
-
-    // TODO
+    
     // Define a function gen_Moo that takes an argument: x: u64 and returns a Moo
     fun gen_Moo(x:u64): Moo {
         Moo {
