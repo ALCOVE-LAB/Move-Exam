@@ -7,7 +7,8 @@ module 0x42::M1{
     // TODO
     // Define a module friend M2
     friend 0x42::M2;
-    
+    friend 0x42::M3;
+
     // TODO
     // Define a function num that returns 66 with choose public or friend visibility
     public(friend) fun num():u64 {
