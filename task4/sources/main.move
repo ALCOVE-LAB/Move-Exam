@@ -23,8 +23,8 @@ module 0x42::Task4 {
     // 2. create a named object
     public fun createNamedObject(caller: &signer):ConstructorRef {
         // ...
-        let caller_address = signer::address_of(caller);
-        object::create_named_object(caller_address, NAME)
+        // let caller_address = signer::address_of(caller);
+        object::create_named_object(caller, NAME)
     }
 
     // TODO
