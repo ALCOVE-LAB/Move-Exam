@@ -24,7 +24,7 @@ module 0x42::Task2{
     #[test]
     fun test2(){
         let f = gen_Fool(42, true);
-        let Foo{u,b} = &mut f;
+        let Foo{u,b: _} = &mut f;
         *u = 43;
         assert!(f.u == 43,0);
         assert!(f.b == true,1);
