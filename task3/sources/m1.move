@@ -4,19 +4,17 @@
 // modify the visibility of the functions in M1, and set the M1 module visibility.
 module 0x42::M1{
 
-    // TODO
     // Define a module friend M2
-    friend       ;
-    
-    // TODO
+    friend   0x42::M2    ;
+    friend   0x42::M3    ;
+
     // Define a function num that returns 66 with choose public or friend visibility
-    fun num():u64 {
+    public(friend) fun num():u64 {
         66
     }
 
-    // TODO
     // Define a function num2 that returns 88 with choose public or friend visibility
-    fun num2():u64 {
+    public(friend) fun num2():u64 {
         88
     }
 }
