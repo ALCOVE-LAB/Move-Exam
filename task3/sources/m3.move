@@ -4,6 +4,6 @@ module 0x42::M3{
         use 0x42::M1::num;
 
         let n = num();
-        assert(n == 66,0);
+        assert!(n == 66,0);
     }
 }
