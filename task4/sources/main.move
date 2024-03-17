@@ -13,18 +13,26 @@ module 0x42::Task4 {
     // 1. create a deleteable object
     public fun createDeleteableObject(caller: &signer):ConstructorRef {
         // ...
+        let caddress = signer::address_of(caller);
+        let obj = object::create_object(caddress);
+        obj
     }
 
     // TODO
     // 2. create a named object
     public fun createNamedObject(caller: &signer):ConstructorRef {
         // ...
+        let obj = object::create_named_object(caller, NAME);
+        obj
     }
 
     // TODO
     // 3. create a sticky object
     public fun createStickyObject(caller: &signer):ConstructorRef {
         // ...
+        let caddress = signer::address_of(caller);
+        let obj = object::create_sticky_object(caddress);
+        obj
     }
 
     #[test(caller = @0x88)]

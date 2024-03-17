@@ -16,7 +16,7 @@ module 0x42::M1{
 
     // TODO
     // Define a function num2 that returns 88 with choose public or friend visibility
-    public fun num2():u64 {
+    public(friend) fun num2():u64 {
         88
     }
 }
