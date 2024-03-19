@@ -1,4 +1,5 @@
 // Tasl3 - module 
+// Tasl3 - module 
 module 0x42::M1{
 
     // TODO
@@ -16,3 +17,4 @@ module 0x42::M1{
     public(friend) fun num2():u64 {
         88
     }
+}
