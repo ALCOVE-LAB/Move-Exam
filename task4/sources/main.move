@@ -6,25 +6,31 @@ module 0x42::Task4 {
     use aptos_framework::object::{Self, ConstructorRef};
 
     use std::signer;
+    use std::signer::address_of;
 
     const NAME:vector<u8> = b"myObject"; 
 
     // TODO
     // 1. create a deleteable object
     public fun createDeleteableObject(caller: &signer):ConstructorRef {
-        // ...
+        let caller_addr = signer::address_of(caller);
+        let deleteable = object::create_object(caller_addr);
+        deleteable
     }
 
     // TODO
     // 2. create a named object
     public fun createNamedObject(caller: &signer):ConstructorRef {
-        // ...
+       let object = object::create_named_object(caller,NAME);
+        object
     }
 
     // TODO
     // 3. create a sticky object
     public fun createStickyObject(caller: &signer):ConstructorRef {
-        // ...
+        let caller_addr = signer::address_of(caller);
+        let object = object::create_sticky_object(caller_addr);
+        object
     }
 
     #[test(caller = @0x88)]
