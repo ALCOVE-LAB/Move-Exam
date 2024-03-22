@@ -1,17 +1,17 @@
 // Task2 - drop, copy, store
 module 0x42::Task2{
-    use std::signer;
 
     // TODO
     // Define a struct Foo with two fields: u: u64, b: bool with ability to drop
-    struct Foo {
-       // ...
+    struct Foo has drop{
+        u: u64,
+        b: bool
     }
 
     // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
     fun gen_Fool(u:u64, b:bool): Foo {
-        // ...
+        Foo{u, b}
     }
 
     #[test]
@@ -32,14 +32,15 @@ module 0x42::Task2{
 
     // TODO
     // Define a struct Soo with two fields: x: u64, y: u64 with ability to copy
-    struct Soo {
-        // ...
+    struct Soo has copy{
+        x: u64,
+        y: u64
     }
 
     // TODO
     // Define a function gen_Soo that takes two arguments: x: u64, y: u64 and returns a Soo
     fun gen_Soo(x:u64, y:u64): Soo {
-        // ...
+        Soo{x,y}
     }
 
     #[test]
@@ -56,13 +57,13 @@ module 0x42::Task2{
 
     // TODO
     // Define a struct Koo with a field: s: Moo with ability
-    struct Koo {
+    struct Koo has drop{
         s: Moo
     }
 
     // TODO
     // Define a struct Moo with a field: x: u64 with ability
-    struct Moo {
+    struct Moo has store, drop{
         x: u64
     }
 
@@ -70,7 +71,7 @@ module 0x42::Task2{
     // TODO
     // Define a function gen_Moo that takes an argument: x: u64 and returns a Moo
     fun gen_Moo(x:u64): Moo {
-        // ...
+        Moo{x}
     }
 
     #[test]
