@@ -11,7 +11,10 @@ module 0x42::Task1 {
     // TODO
     // Define a function called myWallet that returns a Wallet with a balance of 1000.
     fun myWallet(): Wallet {
-       Wallet{balance :   1000}
+       let wallet:Wallet = Wallet{
+            balance:1000
+        };
+        wallet
     }
 
     #[test]
