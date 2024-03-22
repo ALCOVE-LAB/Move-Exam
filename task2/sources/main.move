@@ -12,7 +12,11 @@ module 0x42::Task2{
     // TODO
     // Define a function gen_Fool that takes two arguments: u: u64, b: bool and returns a Foo
     fun gen_Fool(u:u64, b:bool): Foo {
-        Foo
+         let foo = Foo{
+            u,
+            b
+        };
+        foo
     }
 
     #[test]
@@ -41,7 +45,11 @@ module 0x42::Task2{
     // TODO
     // Define a function gen_Soo that takes two arguments: x: u64, y: u64 and returns a Soo
     fun gen_Soo(x:u64, y:u64): Soo {
-        Soo
+        let soo = Soo{
+            x,
+            y
+        };
+        soo
     }
 
     #[test]
