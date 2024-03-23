@@ -8,6 +8,7 @@ module 0x42::Task4 {
     use std::signer;
 
     const NAME:vector<u8> = b"myObject"; 
+    
 
     // TODO
     // 1. create a deleteable object
