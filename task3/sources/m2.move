@@ -1,4 +1,4 @@
-module 0x42::M2{
+module 0x42::M2 {
     #[test]
     fun test(){
         use 0x42::M1::num;
